@@ -20,7 +20,15 @@
     padding: 20px;
 
     &::-webkit-scrollbar {
-      display: none;
+      display: inline-block;
+      // display: none; տակի scroll-ը թաքցնելու համար
+      cursor: ew-resize;
+      height: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #f8f7f771;
+      border-radius: 12px;
     }
 
     .row__poster {

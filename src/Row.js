@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from './axios';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
@@ -29,7 +29,6 @@ export default function Row({ title, fetchUrl, islargeRow }) {
     },
   };
   const handleClick = (movie) => {
-
     if (trailerUrl) {
       settrailerUrl('');
     } else {
@@ -41,13 +40,32 @@ export default function Row({ title, fetchUrl, islargeRow }) {
         .catch(err => console.log(err))
     }
   }
+  const elRef = useRef();
+  useEffect(() => {
+    const el = elRef.current;
+    if (el) {
+      const onWheel = e => {
+        if (e.deltaY === 0) return;
+        e.preventDefault();
+        el.scrollTo({
+          left: el.scrollLeft + e.deltaY * 2,
+          behavior: "smooth"
+        });
+      };
+      console.log(111);
+      el.addEventListener("wheel", onWheel);
+      return () => el.removeEventListener("wheel", onWheel);
+    }
+  }, []);
+
   return <div className='row'>
     <h2>{title}</h2>
-    <div className="row__posters">
+    <div className="row__posters" ref={elRef}>
       {movies.map(movie => {
         return <img
           className={`row__poster ${islargeRow && "row_posterlarge"}`}
           key={movie.id}
+          style={{ whiteSpace: "nowrap" }}
           onClick={() => {
             handleClick(movie)
             settimeToPlay(true)
