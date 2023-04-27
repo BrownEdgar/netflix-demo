@@ -48,7 +48,7 @@ export default function Row({ title, fetchUrl, islargeRow }) {
         if (e.deltaY === 0) return;
         e.preventDefault();
         el.scrollTo({
-          left: el.scrollLeft + e.deltaY * 2,
+          left: el.scrollLeft + e.deltaY * 3,
           behavior: "smooth"
         });
       };

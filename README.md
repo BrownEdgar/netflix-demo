@@ -1,8 +1,6 @@
 # `NETFLIX DEMO`
 
-### `base_url` => `https://api.themoviedb.org/3`
-
-This project is [here](https://github.com/facebook/create-react-app).
+### `base_url` => `https://api.themoviedb.org`
 
 ## images
 

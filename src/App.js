@@ -12,12 +12,12 @@ function App() {
       <Banner />
       <Row islargeRow={true} title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} />
       <Row islargeRow={false} title="Trending Now" fetchUrl={requests.fetchTrending} />
-      <Row islargeRow={false} title="Top Rated" fetchUrl={requests.fetchTopRated} />
-      <Row islargeRow={false} title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      <Row islargeRow={false} title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      <Row islargeRow={false} title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
-      <Row islargeRow={false} title="Romanse Movies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row islargeRow={false} title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
+      <Row islargeRow={true} title="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row islargeRow={true} title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+      <Row islargeRow={true} title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+      <Row islargeRow={true} title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+      <Row islargeRow={true} title="Romanse Movies" fetchUrl={requests.fetchRomanceMovies} />
+      <Row islargeRow={true} title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
     </div>
   );
 }
